@@ -21,18 +21,19 @@ function getComputerChoice ()
    
     } 
     
-    function win(userChoice,computerChoice) 
+    function win() 
     {
      winsScore++;
     wins_span.innerHTML = 'Wins: ' +winsScore;
-     }        
+    console.log(winsScore)
+     };        
     
-     function lose (userChoice,computerChoice)
+     function lose ()
     {
     lossesScore++
     losses_span.innerHTML= "Lose: "  +lossesScore;
-    }   
-     function tie(userChoice,computerChoice)
+    };  
+     function tie()
         {
     tiesScore++
     ties_span.innerHTML='Ties: ' +tiesScore;
@@ -42,31 +43,21 @@ function getComputerChoice ()
 
 function game(userChoice) {
     const computerChoice = getComputerChoice();
-    switch(userChoice + computerChoice){
-        case 'paper'+'rock':
-        case 'paper'+'rock':
-        case 'scissors'+'paper':
-        win(userChoice,computerChoice);
-            break;
-         console.log('your the winner');
-        case 'rock'+'paper':
-        case 'paper'+'scissors':
-        case 'scissors'+'rock':
-        console.log("computer wins")
-        lose(userChoice,computerChoice);
-            break; 
-        case 'rock'+'rock':
-        case 'paper'+'paper':
-        case 'scissors'+'scissors':
-        tie(userChoice,computerChoice);
-            break;
-    }   console.log('Its a tie!!!!');
 
-    
+    if (userChoice == 'rock' && computerChoice == 'scissors') {
+
+       win();
+    } else if (userChoice == 'rock' && computerChoice =='paper') {
+         lose();
+        
+        }
+        else if (userChoice == 'rock' && computerChoice == 'rock') {
+
+            tie();
+            
+            }
+        }
  
-
-}
-
 function main(){
     rock_div.addEventListener('click', function(){
         game('rock');
