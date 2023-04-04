@@ -44,20 +44,35 @@ function getComputerChoice ()
 function game(userChoice) {
     const computerChoice = getComputerChoice();
 
-    if (userChoice == 'rock' && computerChoice == 'scissors') {
+   if (userChoice== 'rock' && computerChoice == 'scissors'){
+    win();}
+    else if(userChoice =='rock' &&computerChoice=='paper'){
+    lose();}
+   else if (userChoice== 'rock'&& computerChoice=='rock'){
+        tie();
+    }
+    else if (userChoice=='paper'&& computerChoice=='scissors'){
+        lose();
+    }
+    else if (userChoice=='paper'&&computerChoice=='rock'){
+        win();
+    }
+    else if(userChoice=='paper'&&computerChoice=='paper'){
+        tie();
+    }
+    else if (userChoice=='scissors'&&computerChoice=='paper'){
+        win();
+    }
+    else if (userChoice=='scissors'&&computerChoice=='rock'){
+        lose();
+    }
+    else if (userChoice=='scissors'&&computerChoice=='scissors'){
+        tie();
+    }
+}
 
-       win();
-    } else if (userChoice == 'rock' && computerChoice =='paper') {
-         lose();
-        
-        }
-        else if (userChoice == 'rock' && computerChoice == 'rock') {
 
-            tie();
-            
-            }
-        }
- 
+
 function main(){
     rock_div.addEventListener('click', function(){
         game('rock');
